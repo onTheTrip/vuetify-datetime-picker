@@ -5,7 +5,6 @@
         v-bind="textFieldProps"
         :disabled="disabled"
         :loading="loading"
-        :label="label"
         :value="formattedDatetime"
         :error-messages="errorMessages"
         v-on="on"
@@ -14,6 +13,11 @@
         <template v-slot:progress>
           <slot name="progress">
             <v-progress-linear color="primary" indeterminate absolute height="2"></v-progress-linear>
+          </slot>
+        </template>
+        <template v-slot:label>
+          <slot name="label">
+            {{ label }}
           </slot>
         </template>
       </v-text-field>
